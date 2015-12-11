@@ -14,7 +14,9 @@ class BankAccount(object):
                
     def __init__(self, balance):
         self.balance = balance
+    
         
+                
     """I added this get_balance method because it's much easier to access the balance this way,
     if you only return it in your withdraw and deposit function, you can't access the balance 
     when you're not withdrawing or depositing. 
@@ -22,10 +24,14 @@ class BankAccount(object):
         
     def get_balance(self):
         return self.balance
+        
+      
+          
     """   
     Your original deposit and withdraw function was working okay, 
     this was just me doing it slightly differently :) 
     """
+    
     def deposit(self, deposit_amount):
         self.balance += deposit_amount
     def withdraw(self, withdraw_amount):
@@ -34,9 +40,15 @@ class BankAccount(object):
         else:
             print "Invalid Transaction"
             
-    """Also, since getting the minimum account balance is also associate with BankAccount, 
+            
+            
+    """Since getting the minimum account balance is also associate with BankAccount, 
     I would not create a new class for it. I would create a new class for maybe if I
-    have VIPBankAccounts that have different minimum amount of something. :)       
+    have VIPBankAccounts that have different minimum amount of something. :)   
+    
+    Also, I think it might be better to pass in a min_balance variable rather than hard
+    coding self.balance <= 10, because you'll have more flexibility. I you want the 
+    minimum balance to be 20, you wont have to go in and change your function.           
     """ 
     
     def MinimumAccountBalance (self, min_balance):
@@ -44,11 +56,13 @@ class BankAccount(object):
             print "Below Bank Minimum Account Balance"
 
 
+
 """
 These are some print statements that help explains my program. 
 I'm only a beginner as well, so my implementation might not be the best, but I hope this helps! :D 
 Working towards being a better programmer as well :) 
 """
+
 
 #initialize an account name MyAccount with the initial balance of 1000
 MyAccount = BankAccount(1000)
